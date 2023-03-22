@@ -7,15 +7,17 @@ import helpers.ThisConfigAPIResources;
 import helpers.ThisConfigSecrets;
 import io.restassured.response.Response;
 
-public class Sleep extends CommonAbstractor{
+public class HeartRateTimeSeries extends CommonAbstractor{
 	
 	private Response response;
 	
-	public Sleep(SleepAPIType type) {
-		setMethod(type.requestType);
+	public HeartRateTimeSeries(HeartRateTimeSeriesAPIType type, String date, String period) {
+		setMethod(CommonAbstractor.MethodType.GET);
 		setBaseUri(ThisConfigAPIResources.BASE_URI);
 		addHeader("Cache-Control", "no-cache");
 		addHeader("Authorization", "Bearer "+ThisConfigSecrets.ACCESS_TOKEN);
+		type.endpoint = type.endpoint.replace("[period]", period);
+		type.endpoint = type.endpoint.replace("[date]", date);
 		setBasePath(type.endpoint);
 	}
 	
@@ -34,13 +36,11 @@ public class Sleep extends CommonAbstractor{
 		return null;
 	}
 	
-	public enum SleepAPIType {
-		GET_SLEEP_GOAL(ThisConfigAPIResources.SLEEP_GOAL_PATH, CommonAbstractor.MethodType.GET);
-		private SleepAPIType(String type, MethodType get) {
+	public enum HeartRateTimeSeriesAPIType {
+		GET_HEART_RATE_TIME_SERIES_BY_DATE(ThisConfigAPIResources.HEART_RATE_TIME_SERIES_PATH);
+		private HeartRateTimeSeriesAPIType(String type) {
 			this.endpoint = type;
-			this.requestType = get;
 		}
 		public String endpoint;
-		MethodType requestType;
 	}
 }

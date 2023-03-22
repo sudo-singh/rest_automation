@@ -1,22 +1,21 @@
 package fitbitRequestBuilders;
 
 import org.testng.Assert;
-
 import apiCommons.CommonAbstractor;
 import helpers.ThisConfigAPIResources;
 import helpers.ThisConfigSecrets;
 import io.restassured.response.Response;
 
-public class Sleep extends CommonAbstractor{
+public class Breathing extends CommonAbstractor {
 	
 	private Response response;
 	
-	public Sleep(SleepAPIType type) {
-		setMethod(type.requestType);
+	public Breathing(BreathingAPIType type, String date) {
+		setMethod(CommonAbstractor.MethodType.GET);
 		setBaseUri(ThisConfigAPIResources.BASE_URI);
 		addHeader("Cache-Control", "no-cache");
 		addHeader("Authorization", "Bearer "+ThisConfigSecrets.ACCESS_TOKEN);
-		setBasePath(type.endpoint);
+		setBasePath(type.endpoint.replace("[date]", date));
 	}
 	
 	public Response execute() {
@@ -24,7 +23,7 @@ public class Sleep extends CommonAbstractor{
 		return response;
 	}
 	
-	public void assertGetSleepGoalResponse() {
+	public void assertGetBreathingRateResponse() {
 		Assert.assertEquals(response.getStatusCode(), 200);
 	}
 
@@ -34,13 +33,11 @@ public class Sleep extends CommonAbstractor{
 		return null;
 	}
 	
-	public enum SleepAPIType {
-		GET_SLEEP_GOAL(ThisConfigAPIResources.SLEEP_GOAL_PATH, CommonAbstractor.MethodType.GET);
-		private SleepAPIType(String type, MethodType get) {
+	public enum BreathingAPIType {
+		GET_BREATHING_RATE_BY_DATE(ThisConfigAPIResources.BREATHING_RATE_BY_DATE_PATH);
+		private BreathingAPIType(String type) {
 			this.endpoint = type;
-			this.requestType = get;
 		}
 		public String endpoint;
-		MethodType requestType;
 	}
 }

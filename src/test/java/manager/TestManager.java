@@ -9,8 +9,6 @@ public class TestManager {
 		
 	}
 	
-	
-	
 	@AfterSuite(alwaysRun = true)
 	public void cleanUpAndSave() {
 		

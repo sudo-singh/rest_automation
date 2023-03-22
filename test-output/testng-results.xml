@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="2" total="3" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="2865" started-at="2023-03-14T03:44:37Z" finished-at="2023-03-14T03:44:40Z">
+  <suite name="Default suite" duration-ms="3914" started-at="2023-03-20T05:08:05Z" finished-at="2023-03-20T05:08:09Z">
     <groups>
       <group name="regression">
-        <method signature="FitbitTests.SleepLog()[pri:0, instance:fitbitTests.FitbitTests@25d250c6]" name="SleepLog" class="fitbitTests.FitbitTests"/>
+        <method signature="FitbitTests.createMeal()[pri:0, instance:fitbitTests.FitbitTests@1a04f701]" name="createMeal" class="fitbitTests.FitbitTests"/>
       </group> <!-- regression -->
       <group name="smoke">
-        <method signature="FitbitTests.SleepLog()[pri:0, instance:fitbitTests.FitbitTests@25d250c6]" name="SleepLog" class="fitbitTests.FitbitTests"/>
+        <method signature="FitbitTests.createMeal()[pri:0, instance:fitbitTests.FitbitTests@1a04f701]" name="createMeal" class="fitbitTests.FitbitTests"/>
       </group> <!-- smoke -->
     </groups>
-    <test name="Default test" duration-ms="2865" started-at="2023-03-14T03:44:37Z" finished-at="2023-03-14T03:44:40Z">
+    <test name="Default test" duration-ms="3914" started-at="2023-03-20T05:08:05Z" finished-at="2023-03-20T05:08:09Z">
       <class name="fitbitTests.FitbitTests">
-        <test-method status="PASS" signature="generateTokens()[pri:0, instance:fitbitTests.FitbitTests@25d250c6]" name="generateTokens" is-config="true" duration-ms="18" started-at="2023-03-14T03:44:37Z" finished-at="2023-03-14T03:44:37Z">
+        <test-method status="PASS" signature="generateTokens()[pri:0, instance:fitbitTests.FitbitTests@1a04f701]" name="generateTokens" is-config="true" duration-ms="11" started-at="2023-03-20T05:08:05Z" finished-at="2023-03-20T05:08:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateTokens -->
-        <test-method status="PASS" signature="SleepLog()[pri:0, instance:fitbitTests.FitbitTests@25d250c6]" name="SleepLog" duration-ms="2837" started-at="2023-03-14T03:44:37Z" description="Check whether the Sleep Log is returned." finished-at="2023-03-14T03:44:40Z">
+        <test-method status="PASS" signature="createMeal()[pri:0, instance:fitbitTests.FitbitTests@1a04f701]" name="createMeal" duration-ms="3890" started-at="2023-03-20T05:08:05Z" description="Create a Meal Plan" finished-at="2023-03-20T05:08:09Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SleepLog -->
-        <test-method status="PASS" signature="cleanUpAndSave()[pri:0, instance:fitbitTests.FitbitTests@25d250c6]" name="cleanUpAndSave" is-config="true" duration-ms="3" started-at="2023-03-14T03:44:40Z" finished-at="2023-03-14T03:44:40Z">
+        </test-method> <!-- createMeal -->
+        <test-method status="PASS" signature="cleanUpAndSave()[pri:0, instance:fitbitTests.FitbitTests@1a04f701]" name="cleanUpAndSave" is-config="true" duration-ms="2" started-at="2023-03-20T05:08:09Z" finished-at="2023-03-20T05:08:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUpAndSave -->

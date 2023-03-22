@@ -18,7 +18,7 @@ public class ThisConfigSecrets {
 			
 		} catch (Throwable e) {
 			e.printStackTrace();
-			throw new RuntimeException("Something wrong !!! Check configurations.", e);
+			throw new RuntimeException("Something wrong!", e);
 		}
 	}
 }
